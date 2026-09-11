@@ -1,0 +1,7 @@
+import { Outlet } from 'react-router-dom'
+import { Sidebar } from './components/Sidebar'
+import { TopBar } from './components/TopBar'
+
+export default function App() {
+  return <div className="flex min-h-screen bg-canvas"><Sidebar /><div className="min-w-0 flex-1"><TopBar /><Outlet /></div></div>
+}

@@ -1,0 +1,669 @@
+{
+  "endpoints": [
+    {
+      "path": "/organization-service/api/v1/organizations",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "OrganizationRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "OrganizationResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "size",
+          "type": "integer"
+        },
+        {
+          "name": "sort",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "Page<OrganizationResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "OrganizationResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "OrganizationRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "OrganizationResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "204": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations/{id}/users",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "size",
+          "type": "integer"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "string",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/organization-service/api/v1/organizations/{id}/users/{userId}/role",
+      "method": "PATCH",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "unknown"
+        },
+        {
+          "name": "userId",
+          "type": "unknown"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {}
+    },
+    {
+      "path": "/project-service/api/v1/projects",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "ProjectRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ProjectResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "organizationId",
+          "type": "integer"
+        },
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "size",
+          "type": "integer"
+        },
+        {
+          "name": "sort",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "Page<ProjectResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ProjectResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "ProjectRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ProjectResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "204": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects/{id}/members",
+      "method": "POST",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "ProjectMemberRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ProjectMemberResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/project-service/api/v1/projects/{id}/members/{userId}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        },
+        {
+          "name": "userId",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "204": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/tasks",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "TaskCreateRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "TaskResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/tasks",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "organizationId",
+          "type": "integer"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "Page<TaskResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/tasks/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "TaskResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/tasks/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "TaskUpdateRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "TaskResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/tasks/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "204": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/register",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "RegisterRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "LoginRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "AuthResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/refresh",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "RefreshRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "AuthResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/logout",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "RefreshRequest",
+        "fields": []
+      },
+      "response_models": {
+        "204": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "organizationId",
+          "type": "integer"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "Page<UserResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}/role",
+      "method": "PATCH",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "integer"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "RoleUpdateRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    }
+  ],
+  "auth_scheme": "bearer_jwt",
+  "confidence": "inferred",
+  "source_commit_sha": "c8b5229956f389830e07d642c0ad09cc89b31dea",
+  "generated_at": "2026-09-11T03:00:40.311486Z",
+  "contract_check": {
+    "confidence": "inferred",
+    "contract_match_score": 1.0,
+    "checked_at": "2026-09-11T03:00:40.311498Z",
+    "contract_issues": [
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/organization-service/api/v1/organizations/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/organization-service/api/v1/organizations/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/organization-service/api/v1/organizations/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/organization-service/api/v1/organizations/{id}/users",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PATCH",
+        "path": "/organization-service/api/v1/organizations/{id}/users/{userId}/role",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/project-service/api/v1/projects/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/project-service/api/v1/projects/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/project-service/api/v1/projects/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/project-service/api/v1/projects/{id}/members",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/project-service/api/v1/projects/{id}/members/{userId}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/tasks/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/tasks/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/tasks/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/auth/register",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/auth/refresh",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/auth/logout",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/users",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/users/me",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/users/{id}",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PATCH",
+        "path": "/api/v1/users/{id}/role",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      }
+    ]
+  }
+}

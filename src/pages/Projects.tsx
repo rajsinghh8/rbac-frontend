@@ -1,0 +1,9 @@
+import { useEffect, useState } from 'react'
+import { Plus } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { currentUser } from '../auth/auth'
+import { Badge, Empty, Loading, PageHeader, primaryButton } from '../components/UI'
+import { getProjects } from '../data/store'
+import type { Project } from '../types'
+
+export function Projects() { const navigate = useNavigate(); const user = currentUser(); const [records, setRecords] = useState<Project[] | null>(null); useEffect(() => { getProjects().then(setRecords) }, []); if (!records) return <main className="p-8"><Loading /></main>; const filtered = records.filter((record) => user?.role === 'SUPER_ADMIN' || record.organizationId === user?.organizationId); const canManage = ['SUPER_ADMIN', 'ORG_ADMIN', 'MANAGER'].includes(user?.role || ''); return <main className="p-8"><PageHeader title="Projects" subtitle="All workstreams you can access." action={canManage ? <button onClick={() => navigate('/projects/new')} className={primaryButton}><Plus size={16} className="mr-2 inline" />New project</button> : undefined} />{filtered.length ? <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{filtered.map((record) => <button key={record.id} onClick={() => navigate(`/projects/${record.id}`)} className="rounded-panel border border-line bg-surface p-6 text-left shadow-sm transition hover:border-primary"><div className="flex justify-between"><Badge>{record.status}</Badge><span className="text-xs text-secondary">{record.memberIds.length} members</span></div><h2 className="mt-5 text-lg font-bold text-ink">{record.name}</h2><p className="mt-2 min-h-10 text-sm leading-5 text-secondary">{record.description}</p><p className="mt-6 text-xs font-semibold text-primary">Open project →</p></button>)}</div> : <Empty>No projects are available yet.</Empty>}</main> }

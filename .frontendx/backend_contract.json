@@ -518,12 +518,26 @@
   "auth_scheme": "bearer_jwt",
   "confidence": "inferred",
   "source_commit_sha": "c8b5229956f389830e07d642c0ad09cc89b31dea",
-  "generated_at": "2026-09-11T03:00:40.311486Z",
+  "generated_at": "2026-09-11T04:40:50.558383Z",
   "contract_check": {
     "confidence": "inferred",
     "contract_match_score": 1.0,
-    "checked_at": "2026-09-11T03:00:40.311498Z",
+    "checked_at": "2026-09-11T04:40:50.558402Z",
     "contract_issues": [
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/organization-service/api/v1/organizations",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/organization-service/api/v1/organizations",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
       {
         "type": "missing_endpoint",
         "method": "GET",
@@ -534,13 +548,6 @@
       {
         "type": "missing_endpoint",
         "method": "PUT",
-        "path": "/organization-service/api/v1/organizations/{id}",
-        "relevance": "in_scope",
-        "resolution": "unverified"
-      },
-      {
-        "type": "missing_endpoint",
-        "method": "DELETE",
         "path": "/organization-service/api/v1/organizations/{id}",
         "relevance": "in_scope",
         "resolution": "unverified"
@@ -554,8 +561,15 @@
       },
       {
         "type": "missing_endpoint",
-        "method": "PATCH",
-        "path": "/organization-service/api/v1/organizations/{id}/users/{userId}/role",
+        "method": "POST",
+        "path": "/project-service/api/v1/projects",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/project-service/api/v1/projects",
         "relevance": "in_scope",
         "resolution": "unverified"
       },
@@ -569,13 +583,6 @@
       {
         "type": "missing_endpoint",
         "method": "PUT",
-        "path": "/project-service/api/v1/projects/{id}",
-        "relevance": "in_scope",
-        "resolution": "unverified"
-      },
-      {
-        "type": "missing_endpoint",
-        "method": "DELETE",
         "path": "/project-service/api/v1/projects/{id}",
         "relevance": "in_scope",
         "resolution": "unverified"
@@ -589,8 +596,15 @@
       },
       {
         "type": "missing_endpoint",
-        "method": "DELETE",
-        "path": "/project-service/api/v1/projects/{id}/members/{userId}",
+        "method": "POST",
+        "path": "/api/v1/tasks",
+        "relevance": "in_scope",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/tasks",
         "relevance": "in_scope",
         "resolution": "unverified"
       },
@@ -604,13 +618,6 @@
       {
         "type": "missing_endpoint",
         "method": "PUT",
-        "path": "/api/v1/tasks/{id}",
-        "relevance": "in_scope",
-        "resolution": "unverified"
-      },
-      {
-        "type": "missing_endpoint",
-        "method": "DELETE",
         "path": "/api/v1/tasks/{id}",
         "relevance": "in_scope",
         "resolution": "unverified"
@@ -625,14 +632,14 @@
       {
         "type": "missing_endpoint",
         "method": "POST",
-        "path": "/api/v1/auth/refresh",
+        "path": "/api/v1/auth/login",
         "relevance": "in_scope",
         "resolution": "unverified"
       },
       {
         "type": "missing_endpoint",
         "method": "POST",
-        "path": "/api/v1/auth/logout",
+        "path": "/api/v1/auth/refresh",
         "relevance": "in_scope",
         "resolution": "unverified"
       },

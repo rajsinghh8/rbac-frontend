@@ -1,4 +1,4 @@
-import apiClient from '../api/client'
+import { authService } from '../api/services'
 import { demoUsers } from '../data/mockData'
 import { Role, User } from '../types'
 
@@ -13,9 +13,8 @@ function localLogin(email: string, password: string): boolean {
 }
 export async function login(email: string, password: string): Promise<boolean> {
   if (USE_MOCK) return localLogin(email, password)
-  // Inferred endpoint; verify request and response shape against the backend.
-  const response = await apiClient.post('/api/v1/auth/login', { email, password })
-  localStorage.setItem('auth_token', JSON.stringify(response.data))
+  const auth = await authService.login({ email, password })
+  localStorage.setItem('auth_token', JSON.stringify(auth))
   return true
 }
 export function logout(): void { localStorage.removeItem('auth_token') }
